@@ -1,20 +1,29 @@
-public class Rectangle {
+public class Rectangle extends Shape(Point location, int sideA, int sideB){
+    super(location);
+    set sideA
 
     private Point topLeft;
     private int sideA , sideB;
+    public static int counter = 0;
+
+    public static int counterforobject = 0;
+
+    public static String class_name = "Rectangle";
 
     public Rectangle(Point topLeft, int sideA, int sideB) {
         this.topLeft = topLeft;
         setSideA(sideA);
         setSideB(sideB);
-    }
-
+        counter++;
+        counterforobject++;
+}
     public Rectangle(Point topLeft, int sideA) {
         this.topLeft = topLeft;
         setSideA(sideA);
         setSideB(sideA);
-    }
-
+        counter++;
+        counterforobject++;
+}
     public Point getTopLeft() {
         return topLeft;
     }
@@ -27,10 +36,9 @@ public class Rectangle {
         return sideA;
     }
 
-    public void setSideA(int sideA) {
+    public void setSideA(int sideA) throws IllegalAccessException {
         if (sideA < 0){
-            this.sideA = 0;
-            System.out.println("Side A can't be negative!!");
+            throw new IllegalAccessException("Side A can't be negative!!");
         }
         else {
             this.sideA = sideA;
@@ -52,7 +60,20 @@ public class Rectangle {
     public int perimeter(){
         return 2 * (sideA + sideB);
     }
-    public int area(){
-        return sideA * sideB;
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "topLeft=" + topLeft +
+                ", sideA=" + sideA +
+                ", sideB=" + sideB +
+                '}';
     }
+
+    public double area(){
+        return sideA * sideB;
+
+
+    }
+
 }

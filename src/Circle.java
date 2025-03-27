@@ -1,4 +1,4 @@
-public class Circle {
+public class Circle extends Shape {
 
     private Point center;
     private int radius;
@@ -20,6 +20,14 @@ public class Circle {
         return radius;
     }
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "center=" + center +
+                ", radius=" + radius +
+                '}';
+    }
+
     public void setRadius(int radius) {
         if (radius < 0){
             this.radius = 0;
@@ -27,6 +35,15 @@ public class Circle {
         }else {
             this.radius = radius;
 
+            @Override
+            public double area(){
+
+                return Math.PI * this.radius * this.radius;
+
+                @Override
+            }   public double perimeter
+
         }
+
     }
 }
